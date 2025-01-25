@@ -1,5 +1,5 @@
 Its A normal Password Mannager Project .
-Where a people can store his/her secrect password with id . Like Just like google Password mannager. 
+Where a people can store his/her secrect password with id .  Just like google Password mannager. 
 Its not a authorized website it's just an a project/clone .
 
 
