@@ -39,28 +39,28 @@ const Mannager = () => {
     }
 
     const savePassword = () => {
-        if(form.site.length > 3 && form.username.length > 3 && form.password.length > 3){
-        setpasswordArray([...passwordArray, { ...form, id: uuidv4() }])
-        localStorage.setItem("passwords", JSON.stringify([...passwordArray, { ...form, id: uuidv4() }]))
-        setform({ site: "", username: "", password: "" })
+        if (form.site.length > 3 && form.username.length > 3 && form.password.length > 3) {
+            setpasswordArray([...passwordArray, { ...form, id: uuidv4() }])
+            localStorage.setItem("passwords", JSON.stringify([...passwordArray, { ...form, id: uuidv4() }]))
+            setform({ site: "", username: "", password: "" })
 
 
-        toast('Password Saved  ☑️', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
-    }
-    else{
-        toast('Invalid Input ❌',{
-            theme: "dark",
-        });
-    }
+            toast('Password Saved  ☑️', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+        else {
+            toast('Invalid Input ❌', {
+                theme: "dark",
+            });
+        }
     }
 
     const deletePassword = (id) => {
@@ -85,12 +85,7 @@ const Mannager = () => {
     }
 
 
-
     const editPassword = (id) => {
-
-
-
-
         setform(passwordArray.filter(i => i.id === id)[0])
         setpasswordArray(passwordArray.filter(item => item.id !== id))
 
@@ -99,8 +94,6 @@ const Mannager = () => {
     const handleChange = (e) => {
         setform({ ...form, [e.target.name]: e.target.value })
     }
-
-
 
     const copyText = (text) => {
         toast('✔️ Copied To Clipbord', {
@@ -116,8 +109,6 @@ const Mannager = () => {
         });
         navigator.clipboard.writeText(text)
     }
-
-
 
     return (
         <>
@@ -138,35 +129,31 @@ const Mannager = () => {
             {/* Same as */}
             <ToastContainer />
 
-
-            <div className=" absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div></div>
-
             <div className="p-2 md:mycontainer md:px-0">
                 <h1 className=' font-bold text-4xl text-center '>
-
-                    <span className=' text-green-600'>&lt;</span>
-                    Password
-                    <span className='  text-green-600'> Mannager</span>
-                    <span className=' text-green-600'>/&gt; </span>
+                    <span className='text-[#4A628A]'>&lt;</span>
+                    <span className='text-black'> Password</span>
+                    <span className=' text-[#4A628A]'> Mannager </span>
+                    <span className=' text-[#4A628A]'>/&gt; </span>
                 </h1>
-                <p className='text-green-900 text-lg text-center'> Your Own Password Mannager</p>
+                <p className=' font-serif p-1 text-lg text-center'> Your Own Password Mannager</p>
 
 
-                <div className="text-black flex flex-col p-4  gap-8 items-center">
+                <div className="text-black flex flex-col p-4  gap-8 items-start">
 
-                    <input value={form.site} onChange={handleChange} placeholder='Enter Website URL' className='rounded-full border border-green-500 w-full text-black p-4 py-1 ' type="text" name="site" id="site" />
+                    <input value={form.site} onChange={handleChange} placeholder='Enter Website URL' className=' rounded-full border-2 border-[#003161] w-3/4 text-black p-4 py-2 ' type="text" name="site" id="site" />
 
-                    <div className="flex flex-col md:flex-row w-full justify-between gap-8">
-                        <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border border-green-500 w-full text-black p-4 py-1 ' type="text" name="username" id="username" />
+                    <div className="flex flex-col w-3/4 md:flex-row  justify-center items-start gap-8">
+                        <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='rounded-full border-2 border-[#003161] w-full  text-black p-4 py-2 ' type="text" name="username" id="username" />
 
-                        <div className="relative">
-                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-green-500 w-full text-black p-4 py-1 ' type="Password" name="password" id="password" />
+                        <div className="relative ">
+                            <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border-2 border-[#003161] w-full text-black p-4 py-2 ' type="Password" name="password" id="password" />
                             <span className='absolute right-[3px]  top-[4px] cursor-pointer' onClick={showPassword} >
-                                <img ref={ref} className='w-6 p-1 ' src="/icons/visible.png" alt="eye" /> </span>
+                                <img ref={ref} className='w-6 mr-2 py-2 ' src="/icons/visible.png" alt="eye" /> </span>
                         </div>
 
                     </div>
-                    <button onClick={savePassword} className=' flex w-fit justify-center items-center gap-2 bg-green-500 rounded-full py-2 px-8 border border-black hover:bg-[#89D2DC] font-semibold'>
+                    <button onClick={savePassword} className='  flex w-fit justify-center items-center gap-2  rounded-full py-2 px-8 border border-black hover:bg-[#89D2DC] font-semibold'>
                         <lord-icon
                             src="https://cdn.lordicon.com/jgnvfzqg.json"
                             trigger="hover">
@@ -178,7 +165,7 @@ const Mannager = () => {
                     <h2 className='text-2xl py-2 font-bold'> Your Password</h2>
                     {passwordArray.length === 0 && <div> No Password to Show </div>}
                     {passwordArray.length != 0 && < table className="table-auto w-full rounded-md overflow-hidden mb-10">
-                        <thead className='bg-green-800 text-white'>
+                        <thead className='bg-[#133E87] text-white'>
                             <tr>
                                 <th className='py-2 px-16'>Site </th>
                                 <th className='py-2 px-16'> UserName</th>
@@ -186,11 +173,11 @@ const Mannager = () => {
                                 <th className='py-2 px-16'>Actions</th>
                             </tr>
                         </thead>
-                        <tbody className='bg-green-100'>
+                        <tbody className='bg-[#608BC1] text-white '>
                             {passwordArray.map((item, index) => {
 
                                 return <tr key={index}>
-                                    <td className='flex py-2 text-centern gap-2'><a href={item.site} target='_blank' >{item.site}</a>
+                                    <td className='flex p-2 text-centern gap-2'><a href={item.site} target='_blank' >{item.site}</a>
 
                                         <div className='flex items-center justify-center'>
 
@@ -256,6 +243,8 @@ const Mannager = () => {
 
                 {passwordArray.length === 0 && <div> No Password to Show </div>}
             </div >
+
+
         </>
 
     )
