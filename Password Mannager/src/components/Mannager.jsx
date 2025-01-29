@@ -131,12 +131,11 @@ const Mannager = () => {
 
             <div className="p-2 md:mycontainer md:px-0">
                 <h1 className=' font-bold text-4xl text-center '>
-                    <span className='text-[#4A628A]'>&lt;</span>
-                    <span className='text-black'> Password</span>
-                    <span className=' text-[#4A628A]'> Mannager </span>
-                    <span className=' text-[#4A628A]'>/&gt; </span>
+                    Password
+                    <span className=' text-black]'> Keeper </span>
+                    <img width={30} className='inline  mx-2' src="/icons/security.png" alt="" />
                 </h1>
-                <p className=' font-serif p-1 text-lg text-center'> Your Own Password Mannager</p>
+                <p className=' font-serif p-1 text-lg justify-center text-center'> Your Own Password Saver</p>
 
 
                 <div className="text-black flex flex-col p-4  gap-8 items-start">
@@ -148,7 +147,7 @@ const Mannager = () => {
 
                         <div className="relative ">
                             <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border-2 border-[#003161] w-full text-black p-4 py-2 ' type="Password" name="password" id="password" />
-                            <span className='absolute right-[3px]  top-[4px] cursor-pointer' onClick={showPassword} >
+                            <span className='absolute right-[5px]  top-[2px] cursor-pointer' onClick={showPassword} >
                                 <img ref={ref} className='w-6 mr-2 py-2 ' src="/icons/visible.png" alt="eye" /> </span>
                         </div>
 
@@ -164,7 +163,7 @@ const Mannager = () => {
                 <div className="passwords">
                     <h2 className='text-2xl py-2 font-bold'> Your Password</h2>
                     {passwordArray.length === 0 && <div> No Password to Show </div>}
-                    {passwordArray.length != 0 && < table className="table-auto w-full rounded-md overflow-hidden mb-10">
+                    {passwordArray.length != 0 && < table className="table-auto w-full rounded-[20px] overflow-hidden mb-10">
                         <thead className='bg-[#133E87] text-white'>
                             <tr>
                                 <th className='py-2 px-16'>Site </th>
@@ -191,9 +190,9 @@ const Mannager = () => {
 
                                     </td>
 
-                                    <td className='  py-2 text-center' >
-                                        <div className='flex items-center justify-center gap-2'>
-                                            <span> {item.username}</span>
+                                    <td className='  py-2  text-center' >
+                                        <div className='flex items-center justify-center  gap-2'>
+                                            <span > {item.username}</span>
 
                                             <div className='  size-2 items-center  flex  cursor-pointer  ' onClick={() => { copyText(item.username) }}>
                                                 <span className=" material-symbols-outlined">
