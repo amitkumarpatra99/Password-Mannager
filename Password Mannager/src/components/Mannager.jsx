@@ -1,7 +1,5 @@
-import { text } from '@fortawesome/fontawesome-svg-core'
 import { useEffect } from 'react'
 import { useRef, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { v4 as uuidv4 } from 'uuid';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -152,7 +150,7 @@ const Mannager = () => {
                         </div>
 
                     </div>
-                    <button onClick={savePassword} className='  flex w-fit justify-center items-center gap-2  rounded-full py-2 px-8 border border-black hover:bg-[#89D2DC] font-semibold'>
+                    <button onClick={savePassword} className='  flex w-fit justify-center items-center gap-2  rounded-full py-2 px-8 border-2 bg-slate-200  border-[#133E87] font-semibold hover:border-gray-400 hover:bg-[#133E87] hover:text-white '>
                         <lord-icon
                             src="https://cdn.lordicon.com/jgnvfzqg.json"
                             trigger="hover">
