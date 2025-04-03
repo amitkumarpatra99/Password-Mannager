@@ -21,7 +21,7 @@ const Navbar = () => {
             </button>
           </a>
 
-          <a target="_blank" href="https://mrpatra.netlify.app/">
+          <a target="_blank" href="https://akpatra.netlify.app/">
             <button className='text-white my-1  '>
               <span className='flex gap-1 font-semibold items-center   rounded-full   mx-2 px-3'> <img className=' p-1 w-10 rounded-full' src="/icons/DP.jpg" alt="Github Logo" /> Owner  </span>
             </button>
